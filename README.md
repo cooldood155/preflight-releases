@@ -30,7 +30,7 @@ preflight.exe, hold **Shift** while right-clicking and choose **Open PowerShell
 window here**), run this command to check:
 
 ```PowerShell
-$h = [regex]::Match((Read-Host '31e40b2b06079816fec4e703bdc569d5c7c1b99be5f78efd2e22a9d439a18ef1'), '[0-9a-fA-F]{64}').Value; if ($h -and (Get-FileHash .\preflight.exe).Hash -eq $h) { 'MATCH - legit executable' } else { 'NO MATCH - malformed/malicious executable' }
+$h = [regex]::Match((Read-Host 'Paste the SHA-256 from the release page'), '[0-9a-fA-F]{64}').Value; if ($h -and (Get-FileHash .\preflight.exe).Hash -eq $h) { 'MATCH - legit executable' } else { 'NO MATCH - malformed/malicious executable' }
 ```
 
 When it asks, paste the SHA-256 code from the release page and press Enter
